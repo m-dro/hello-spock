@@ -30,7 +30,7 @@ public class WarehouseInventory {
 
     }
 
-    public int availabilityOfProduct(String productName)
+    public int isProductAvailable(String productName)
     {
         if(inventory.containsKey(productName))
         {
@@ -40,6 +40,11 @@ public class WarehouseInventory {
         {
             return 0;
         }
+    }
+    public boolean isProductAvailable(String productName,int count)
+    {
+        int now = isProductAvailable(productName);
+        return count <= now;
     }
 
     public boolean isEmpty()

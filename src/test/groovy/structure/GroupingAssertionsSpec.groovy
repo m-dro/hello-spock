@@ -32,9 +32,9 @@ class GroupingAssertionsSpec extends Specification{
         then: "warehouse is updated accordingly"
         !warehouse.isEmpty()
         warehouse.getBoxesMovedToday() == 3
-        warehouse.availabilityOfProduct("toshiba") == 2
-        warehouse.availabilityOfProduct("panasonic") == 3
-        warehouse.availabilityOfProduct("jvc") == 2
+        warehouse.isProductAvailable("toshiba") == 2
+        warehouse.isProductAvailable("panasonic") == 3
+        warehouse.isProductAvailable("jvc") == 2
     }
 
     def "Buying products reduces the inventory availability - grouping"() {
@@ -69,9 +69,9 @@ class GroupingAssertionsSpec extends Specification{
         with(warehouse){
             !isEmpty()
             getBoxesMovedToday() == 3
-            availabilityOfProduct("toshiba") == 2
-            availabilityOfProduct("panasonic") == 3
-            availabilityOfProduct("jvc") == 2
+            isProductAvailable("toshiba") == 2
+            isProductAvailable("panasonic") == 3
+            isProductAvailable("jvc") == 2
         }
     }
 
@@ -110,9 +110,9 @@ class GroupingAssertionsSpec extends Specification{
         with(warehouse) {
             !isEmpty()
             getBoxesMovedToday() == 3
-            availabilityOfProduct("toshiba") == 2
-            availabilityOfProduct("panasonic") == 3
-            availabilityOfProduct("jvc") == 2
+            isProductAvailable("toshiba") == 2
+            isProductAvailable("panasonic") == 3
+            isProductAvailable("jvc") == 2
         }
 
     }
